@@ -1,5 +1,19 @@
 # Rock Paper Scissors
 
+## Getting started
+
+Install dependencies:
+
+```bash
+yarn install
+```
+
+Start development server:
+
+```bash
+yarn start
+````
+
 ## Design
 
 Since one of the main requirements of the game is to be able to save the game I started with what I thought the game
