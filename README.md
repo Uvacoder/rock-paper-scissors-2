@@ -46,6 +46,7 @@ save all played games as well as loading them and choosing which one to resume.
 
 ## Future Improvements
 * Add the game saving feature via firebase
+* Disable screen while AI is playing
 * Add a screen for rendering saved game and allow the user to choose which game to load
 * In place of just firebase, a dedicated backend.
   * This could allow for online play where users would not have to share a computer
