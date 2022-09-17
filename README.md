@@ -28,7 +28,8 @@ const initState: gameState = {
 This will record all the relevant information in the state and make it easy to save the game state to persisted storage.
 
 My next concern was around the component architecture. I decided to go with a one page layout component that would render
-one of three sub-components based on the stage of the game. First would be the component responsible for signing up the
+one of three sub-components based on the stage of the game. This would allow me to jump back and forth between stages
+without causing issues, making it easy to start a new round or restart. The first would be the component responsible for signing up the
 payers and determining whether they are human or computer. Next would be the actual play component, this could be reused
 for both player, so it will cover stage 1 and 2. The final component would be
 the results page and would also be responsible for executing the logic to determine the winner of the round whenever the
