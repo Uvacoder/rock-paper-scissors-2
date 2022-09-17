@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { MantineProvider, Text, CSSObject } from '@mantine/core';
+import {Game} from "./pages/game";
+import { Center, Container} from '@mantine/core';
+import { createStyles } from '@mantine/core';
+import {useViewportSize} from "@mantine/hooks";
 
-function App() {
+const useStyles = createStyles((theme, _params, getRef) => ({
+  wrapper: {
+    // subscribe to color scheme changes right in your styles
+    backgroundColor: 'blue',
+    minHeight: 500,
+    maxHeight: '100%',
+    height: '100%'
+  },
+}));
+
+
+export default function App() {
+  const { classes } = useStyles();
+  const {height, width} = useViewportSize()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: 'dark' }}>
+      <Center sx={{height: height, width:width}}>
+        <Game/>
+      </Center>
+    </MantineProvider>
   );
 }
-
-export default App;
